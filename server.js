@@ -14,6 +14,28 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Define API routes here
+app.post("/submit", function(req, res) {
+  // Create a new Reservation in the database
+  db.Reservation.create(req.body)
+    .then(function(dbReservation) {
+      // If a Reservation was created successfully, find one library (there's only one) and push the new Reservation's _id to the Grill's `reservations` array
+      // { new: true } tells the query that we want it to return the updated Reservation -- it returns the original by default
+      // Since our mongoose query returns a promise, we can chain another `.then` which receives the result of the query
+      db.Grill.findOneAndUpdate({_id: req.body.grillId}, { $push: { reservations: dbReservation._id } }, { new: true });
+    })
+    .then(function(dbReservation) {
+      db.User.findOneAndUpdate({_id: req.body.userId},// Paulina to provide us with what user ID is (token?)
+         { $push: { reservations: dbReservation._id } }, { new: true });
+    }
+    )
+    .then(function(dbReservation) {
+      res.json(dbReservation)
+    })
+    .catch(function(err) {
+      // If an error occurs, send it back to the client
+      res.json(err);
+    });
+});
 
 // Send every other request to the React app
 // Define any API routes before this runs

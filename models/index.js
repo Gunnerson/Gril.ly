@@ -2,5 +2,6 @@
 
 module.exports = {
   Grill: require("./Grill"),
-  User: require("./User")
+  User: require("./User"),
+  Reservation: require("./Reservation")
 };
