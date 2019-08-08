@@ -1,11 +1,15 @@
 const express = require("express");
+const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
+const passport = require("passport");
+const users = require("./routes/api/users");
+
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
 
 
-
-// Define middleware here
+// Defining middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // Serve up static assets (usually on heroku)
@@ -47,49 +51,33 @@ app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
 });
 
+//Bodyparser middleware
+app.use(
+    bodyParser.urlencoded({
+        extended: false
+    })
+);
+app.use(bodyParser.json());
 
-// everything below here is what I need(paulina): 
+//DB Config
+const db = require("./config/keys").mongoURI;
 
-// const express = require("express");
-// const mongoose = require("mongoose");
-// const bodyParser = require("body-parser");
-// const passport = require("passport");
+//Connect to MongoDB
+mongoose
+    .connect(
+        db,
+        { useNewUrlParser: true }
+    )
+    .then(() => console.log("MongoDB successfully connected"))
+    .catch(err => console.log(err));
 
-// const users = require("./routes/api/users");
+//Passport middleware
+app.use(passport.initialize());
 
-// const app = express();
+//Passport config
+require("./config/passport")(passport);
 
-// //Bodyparser middleware
-// app.use(
-//     bodyParser.urlencoded({
-//         extended: false
-//     })
-// );
-// app.use(bodyParser.json());
+//Routes
+app.use("/api/users", users);
 
-// //DB Config
-// const db = require("./config/keys").mongoURI;
-
-// //Connect to MongoDB
-// mongoose
-//     .connect(
-//         db,
-//         { useNewUrlParser: true }
-//     )
-//     .then(() => console.log("MongoDB successfully connected"))
-//     .catch(err => console.log(err));
-
-// //Passport middleware
-// app.use(passport.initialize());
-
-// //Passport config
-// require("./config/passport")(passport);
-
-// //Routes
-// app.use("/api/users", users);
-
-
-
-// const port = process.env.PORT || 5000; //process.env is Heroku's port
-
-// app.listen(port, () => console.log(`Server up and running on port ${port} !`));
+app.listen(port, () => console.log(`Server up and running on port ${port} !`));
