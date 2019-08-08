@@ -11,12 +11,18 @@ import store from "./store";
 
 import './App.css';
 
+
+// All of these elements were added by Paulina
 import Navbar from "./components/layout/Navbar";
 import Landing from "./components/layout/Landing";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
+
+
+// Adding new components to test the adding of values into the database for the reservations
+
 
 //Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -49,6 +55,9 @@ function App() {
           <Route exact path="/" component={Landing} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
+          <Route exact path="/test">
+            Hello does this work
+          </Route>
           <Switch>
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
           </Switch>
