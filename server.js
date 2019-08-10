@@ -14,21 +14,22 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
+  app.use(express.static("client/build"));      // If a Reservation was created successfully, find one library (there's only one) and push the new Reservation's _id to the Grill's `reservations` array
 }
+
+const models = require("./models");
 
 // Define API routes here
 app.post("/submit", function(req, res) {
   // Create a new Reservation in the database
-  db.Reservation.create(req.body)
+  models.Reservation.create(req.body)
     .then(function(dbReservation) {
-      // If a Reservation was created successfully, find one library (there's only one) and push the new Reservation's _id to the Grill's `reservations` array
       // { new: true } tells the query that we want it to return the updated Reservation -- it returns the original by default
       // Since our mongoose query returns a promise, we can chain another `.then` which receives the result of the query
-      db.Grill.findOneAndUpdate({_id: req.body.grillId}, { $push: { reservations: dbReservation._id } }, { new: true });
+      models.Grill.findOneAndUpdate({_id: req.body.grillId}, { $push: { reservations: dbReservation._id } }, { new: true });
     })
     .then(function(dbReservation) {
-      db.User.findOneAndUpdate({_id: req.body.userId},// Paulina to provide us with what user ID is (token?)
+      models.User.findOneAndUpdate({_id: req.body.userId},// Paulina to provide us with what user ID is (token?)
          { $push: { reservations: dbReservation._id } }, { new: true });
     }
     )
@@ -80,4 +81,4 @@ require("./config/passport")(passport);
 //Routes
 app.use("/api/users", users);
 
-app.listen(port, () => console.log(`Server up and running on port ${port} !`));
+// app.listen(port, () => console.log(`Server up and running on port ${port} !`));

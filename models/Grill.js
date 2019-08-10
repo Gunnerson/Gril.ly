@@ -15,7 +15,7 @@ var GrillSchema = new Schema({
     // `type` must be of type String per TA
   description: String,
   // datesBooked: [Date] is this necessary or the right place?
-  quantity: integer,
+  quantity: Number,
   reservations: [{
     type: Schema.Types.ObjectId,
     ref: "Reservation"
