@@ -67,6 +67,7 @@ app.use(bodyParser.json());
 
 //DB Config
 const db = require("./config/keys").mongoURI;
+const mongoimport = require("./mongodata")
 
 //Connect to MongoDB
 mongoose
@@ -77,7 +78,12 @@ mongoose
     .then(() => console.log("MongoDB successfully connected"))
     .catch(   
       err => {console.log(err)
-      mongoose.connect("mongodb://localhost/grilly", { useNewUrlParser: true }).then(() => console.log("Mongo connected locally"))
+      mongoose.connect("mongodb://localhost/grilly", { useNewUrlParser: true })
+        .then(() => {
+          console.log("Mongo connected locally")
+          mongoimport();
+        }
+        )
     .catch(err => console.log(err))}
       );
 
