@@ -11,11 +11,16 @@ class Navbar extends Component {
                         style={{
                             fontFamily: "monospace"
                         }}
-                        className="col s5 brand-logo center black-text"
+                        className="col s5 brand-logo left black-text"
                         >
                             <i className="material-icons">extension</i>
                             Gril.ly
                         </Link>
+
+                        <ul id="nav-mobile" className="right hide-=on-med-and-down teal">
+                            <li><a href="/register">Register</a></li>
+                            <li><a href="/login">Login</a></li>
+                        </ul>
                     </div>
                 </nav>
             </div>
