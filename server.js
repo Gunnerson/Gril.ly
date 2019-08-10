@@ -2,6 +2,9 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
+
+
+
 const users = require("./routes/api/users");
 
 const path = require("path");
@@ -22,7 +25,9 @@ const models = require("./models");
 // Define API routes here
 app.post("/submit", function(req, res) {
   // Create a new Reservation in the database
+
   models.Reservation.create(req.body)
+
     .then(function(dbReservation) {
       // { new: true } tells the query that we want it to return the updated Reservation -- it returns the original by default
       // Since our mongoose query returns a promise, we can chain another `.then` which receives the result of the query
