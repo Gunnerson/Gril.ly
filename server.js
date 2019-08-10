@@ -2,6 +2,9 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
+
+
+
 const users = require("./routes/api/users");
 
 const path = require("path");
@@ -21,6 +24,8 @@ if (process.env.NODE_ENV === "production") {
 app.post("/submit", function(req, res) {
   // Create a new Reservation in the database
   db.Reservation.create(req.body)
+
+
     .then(function(dbReservation) {
       // If a Reservation was created successfully, find one library (there's only one) and push the new Reservation's _id to the Grill's `reservations` array
       // { new: true } tells the query that we want it to return the updated Reservation -- it returns the original by default
@@ -80,4 +85,4 @@ require("./config/passport")(passport);
 //Routes
 app.use("/api/users", users);
 
-app.listen(port, () => console.log(`Server up and running on port ${port} !`));
+// app.listen(port, () => console.log(`Server up and running on port ${port} !`));
