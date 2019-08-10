@@ -55,9 +55,9 @@ function App() {
           <Route exact path="/" component={Landing} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
-          <Route exact path="/test">
+          {/* <Route exact path="/test">
             Hello does this work
-          </Route>
+          </Route> */}
           <Switch>
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
           </Switch>
