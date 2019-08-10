@@ -70,7 +70,11 @@ mongoose
         { useNewUrlParser: true }
     )
     .then(() => console.log("MongoDB successfully connected"))
-    .catch(err => console.log(err));
+    .catch(   
+      err => {console.log(err)
+      mongoose.connect("mongodb://localhost/grilly", { useNewUrlParser: true }).then(() => console.log("Mongo connected locally"))
+    .catch(err => console.log(err))}
+      );
 
 //Passport middleware
 app.use(passport.initialize());
