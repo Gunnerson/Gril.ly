@@ -12,10 +12,10 @@ var Schema = mongoose.Schema;
 // 
 var ReservationSchema = new Schema({
  
-  date: date,
+  date: Date,
   grillRented: String,
   // datesBooked: [Date] is this necessary or the right place?
-  quantity: integer,
+  quantity: Number,
   userId: String
 });
 
