@@ -1,4 +1,4 @@
-db = require("./models")
+const db = require("./models")
 
 const importData = () => {
     db.Grill.insertMany(grillData, function (err, res) {
