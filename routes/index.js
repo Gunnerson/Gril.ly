@@ -1,13 +1,13 @@
 const router = require('express').Router();
 const users = require('./api/users.js');
-const reservations = require("./reservations")
+const grill = require("./grill")
 
 
 router.use('/api', users);
-router.use("/reservations", reservations)
+router.use("/grill", grill)
 
 router.get('/', (req, res) => {
   res.status(200).json({ message: 'Connected!' });
 });
 
-module.exports = routes;
+module.exports = router;
