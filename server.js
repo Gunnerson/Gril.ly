@@ -22,6 +22,7 @@ if (process.env.NODE_ENV === "production") {
 
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
+  console.log("Mongo attempting to connect...")
 });
 
 //Bodyparser middleware
