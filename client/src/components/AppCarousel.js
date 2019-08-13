@@ -9,7 +9,7 @@ import {
   Row,
   Col
 } from 'reactstrap';
-
+  
 
 const items = [
   {
@@ -97,6 +97,7 @@ class AppCarousel extends Component {
         <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
        
       </Carousel>
+    
     
     );
   }
