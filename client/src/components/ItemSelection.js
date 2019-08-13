@@ -1,11 +1,7 @@
 import React, { Component } from "react";
-import Payment from "./Payment";
-// import Quantity from "./Quantity";
-// import QuantityGrill from "./QuantityGrill";
-// import GasGrillQuantity from "./GasGrillQuantity";
-// import SmokerQuantity from "./SmokerQuanitity";
+import Button from "./Button";
 
-class PaymentPage extends Component {
+class ItemSelection extends Component {
     render() {
         return (
             <div style={{ height: "75vh" }} className="container valign-wrapper">
@@ -16,13 +12,11 @@ class PaymentPage extends Component {
                             <span style={{ fontFamily: "monospace" }}>TIME</span>
                         </h4>
                         <p className="flow-text grey-text text-darken-1">
-                           Payment Page
+                           Item Selection Page
                         </p>
-                        {/* <QuantityGrill />
-                        <GasGrillQuantity />
-                        <SmokerQuantity /> */}
+                        
                         <br />
-                        <Payment />
+                        <Button />
                        <br />
 
                     </div>
@@ -33,4 +27,4 @@ class PaymentPage extends Component {
 }
 
 
-export default PaymentPage;
+export default ItemSelection;

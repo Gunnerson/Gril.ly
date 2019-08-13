@@ -25,7 +25,9 @@ import QuantityGrill from "./components/QuantityGrill";
 import GasGrillQuantity from "./components/GasGrillQuantity";
 import SmokerQuantity from "./components/SmokerQuanitity";
 import ConfirmationPage from "./components/ConfirmationPage";
+import ItemSelection from "./components/ItemSelection";
 import Search from "./components/Search";
+
 // import PaymentSubmitButton from './components/PaymentSubmitButton';
 
 
@@ -92,6 +94,7 @@ function App() {
           <Route exact path="/smokerquantity" component={SmokerQuantity} />
           <Route exact path="/confirmationpage" component={ConfirmationPage} />
           <Route exact path="/search" component={Search} />
+          <Route exact path="/itemselection" component={ItemSelection} />
           {/* <Route exact path="/test">
             Hello does this work
           </Route> */}
