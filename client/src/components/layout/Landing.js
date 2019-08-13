@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import AppCarousel from "../AppCarousel";
 import DatePicker from "../DatePicker";
 import Button from "../Button";
+import Search from "../Search";
 
 class Landing extends Component {
     render() {
@@ -15,7 +16,7 @@ class Landing extends Component {
                             <span style={{ fontFamily: "monospace" }}>TIME</span>
                         </h4>
                         <p className="flow-text grey-text text-darken-1">
-                            Some placeholder text
+                         
                         </p>
                         <br />
                         <AppCarousel />
@@ -23,10 +24,11 @@ class Landing extends Component {
                         {/* <Calendar /> */}
                         <br />
                         <p><b>Please enter or click on the calendar icon to reserve a BBQ</b></p>
-                        <DatePicker />
+                        {/* <DatePicker /> */}
                         <br />
-                        <Button />
+                        {/* <Button /> */}
                         <br />
+                        <Search />
                         <br />
                     </div>
                 </div>

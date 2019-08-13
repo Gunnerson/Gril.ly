@@ -26,6 +26,8 @@ import GasGrillQuantity from "./components/GasGrillQuantity";
 import SmokerQuantity from "./components/SmokerQuanitity";
 import ConfirmationPage from "./components/ConfirmationPage";
 import ItemSelection from "./components/ItemSelection";
+import Search from "./components/Search";
+
 // import PaymentSubmitButton from './components/PaymentSubmitButton';
 
 
@@ -33,7 +35,7 @@ import ItemSelection from "./components/ItemSelection";
 // All of these elements were added by Paulina
 // import Navbar from "./components/layout/Navbar";
 import Landing from "./components/layout/Landing";
-import Search from "./components/layout/Search";
+
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
