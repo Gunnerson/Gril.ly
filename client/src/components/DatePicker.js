@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Calendar from 'react-calendar';
+import DatePicker from 'react-date-picker';
  
 class MyApp extends Component {
   state = {
@@ -11,15 +11,13 @@ class MyApp extends Component {
   render() {
     return (
       <div>
-        <Calendar
+        <DatePicker
           onChange={this.onChange}
           value={this.state.date}
-          // onClickDay={this.onClickDay}
-          // value={}
         />
       </div>
     );
   }
 }
 
-export default Calendar;
+export default DatePicker;

@@ -1,5 +1,8 @@
 import React, { Component } from "react";
-import Calendar from "../Calendar";
+// import Calendar from "../Calendar";
+import AppCarousel from "../AppCarousel";
+import DatePicker from "../DatePicker";
+import Button from "../Button";
 
 class Landing extends Component {
     render() {
@@ -15,7 +18,16 @@ class Landing extends Component {
                             Some placeholder text
                         </p>
                         <br />
-                        <Calendar />
+                        <AppCarousel />
+                        <br />
+                        {/* <Calendar /> */}
+                        <br />
+                        <p><b>Please enter or click on the calendar icon to reserve a BBQ</b></p>
+                        <DatePicker />
+                        <br />
+                        <Button />
+                        <br />
+                        <br />
                     </div>
                 </div>
             </div>
