@@ -40,7 +40,11 @@
     "mongoose": "^5.6.7",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
+<<<<<<< HEAD
     "rc-calendar": "^9.15.5",
+=======
+    "react-calendar": "^2.19.0",
+>>>>>>> 1e279be4069967cec95da8f896d82ac4ce79f4f5
     "validator": "^11.1.0"
   }
 }

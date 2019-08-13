@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import Calendar from "../Calendar";
 
 class Landing extends Component {
     render() {
@@ -15,7 +15,7 @@ class Landing extends Component {
                             Some placeholder text
                         </p>
                         <br />
-                        
+                        <Calendar />
                     </div>
                 </div>
             </div>
