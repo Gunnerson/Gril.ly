@@ -16,6 +16,7 @@ var GrillSchema = new Schema({
   description: String,
   // datesBooked: [Date] is this necessary or the right place?
   quantity: Number,
+  price: Number,
   reservations: [{
     type: Schema.Types.ObjectId,
     ref: "Reservation"

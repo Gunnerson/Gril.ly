@@ -32,6 +32,7 @@ import ConfirmationPage from "./components/ConfirmationPage";
 // All of these elements were added by Paulina
 // import Navbar from "./components/layout/Navbar";
 import Landing from "./components/layout/Landing";
+import Search from "./components/layout/Search";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
@@ -70,6 +71,7 @@ function App() {
     <Provider store={store}>
       <Router>
         <div className="App">
+
           
         {/* Patrick commented out the old Nav, and included the link to AppNavbar.js */}
           {/* <Navbar /> */}
@@ -88,6 +90,7 @@ function App() {
           <Route exact path="/gasquantitygrill" component={GasGrillQuantity} />
           <Route exact path="/smokerquantity" component={SmokerQuantity} />
           <Route exact path="/confirmationpage" component={ConfirmationPage} />
+          <Route exact path="/search" component={Search} />
           {/* <Route exact path="/test">
             Hello does this work
           </Route> */}
