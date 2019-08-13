@@ -5,6 +5,7 @@ const grill = require("./grill")
 
 router.use('/api', users);
 router.use("/grill", grill)
+router.use("/grill/:date", grill)
 
 router.get('/', (req, res) => {
   res.status(200).json({ message: 'Connected!' });

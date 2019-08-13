@@ -8,4 +8,6 @@ router.get("/", grills);
 const test = require("./test")
 router.get("/test", test)
 
+router.get("/:date", grills)
+
 module.exports = router;
