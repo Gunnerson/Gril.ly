@@ -58,7 +58,9 @@ export default class Payment extends React.Component {
           </Col>
         </Row>
        
-        <Button>Submit Payment</Button>
+        <Button onClick={this.onSubmit} href="./ConfirmationPage">Submit Payment</Button>
+        {/* <Button>Submit Payment</Button> */}
+
       </Form>
     );
   }
