@@ -30,7 +30,7 @@ class AppNavbar extends Component {
         <div>
             <Navbar color="dark" dark expand="sm" className="mb-5">
                 <Container>
-                    <NavbarBrand href="/">Gril.ly</NavbarBrand>
+                    <NavbarBrand href="/"><b>Gril.ly</b></NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>

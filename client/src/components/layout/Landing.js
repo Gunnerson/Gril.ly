@@ -2,7 +2,7 @@ import React, { Component } from "react";
 // import Calendar from "../Calendar";
 import AppCarousel from "../AppCarousel";
 // import DatePicker from "../DatePicker";
-import Button from "../Button";
+// import Button from "../Button";
 import Search from "../Search";
 
 class Landing extends Component {
