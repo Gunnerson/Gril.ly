@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // import Calendar from "../Calendar";
 import AppCarousel from "../AppCarousel";
-import DatePicker from "../DatePicker";
+// import DatePicker from "../DatePicker";
 import Button from "../Button";
 import Search from "../Search";
 
@@ -11,13 +11,13 @@ class Landing extends Component {
             <div style={{ height: "75vh" }} className="container valign-wrapper">
                 <div className="row">
                     <div className="col s12 center-align">
-                        <h4>
+                        {/* <h4>
                             <b>Gril.ly</b> {" "}
                             <span style={{ fontFamily: "monospace" }}>TIME</span>
                         </h4>
                         <p className="flow-text grey-text text-darken-1">
                          
-                        </p>
+                        </p> */}
                         <br />
                         <AppCarousel />
                         <br />

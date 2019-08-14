@@ -18,7 +18,7 @@ class Search extends Component {
         }
   render() {
     return (
-      // <div style={{ height: "75vh" }} className="container valign-wrapper">
+    <div style={{ height: "75vh" }} className="container valign-wrapper">
       <div className="row">
         Search
         <Calendar
@@ -29,7 +29,7 @@ class Search extends Component {
         <Button color="primary" size="lg" style={{marginTop: "50px" }} onClick={this.onSubmit} href="./ItemSelection">submit</Button>
 
       </div>
-      // </div>
+    </div>
     );
   }
 }
