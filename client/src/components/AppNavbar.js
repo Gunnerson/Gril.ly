@@ -70,8 +70,8 @@ render() {
                     <NavbarBrand href="/"><b>Gril.ly</b></NavbarBrand>
                     {/* <NavbarToggler onClick={this.toggle} /> */}
                     {/* <Collapse isOpen={this.state.isOpen} navbar></Collapse> */}
-//                           <Collapse isOpen={this.state.isOpen} navbar>
-//                         <Nav className="ml-auto" navbar>
+{/* //                           <Collapse isOpen={this.state.isOpen} navbar> */}
+{/* //                         <Nav className="ml-auto" navbar>
 //                             <NavItem>
 //                                 <NavLink href="/login">
 //                                     Login
@@ -83,7 +83,7 @@ render() {
 //                                 </NavLink>
 //                             </NavItem>
 //                         </Nav>
-//                     </Collapse>
+//                     </Collapse> */}
                     {this.loginOrProfile(this.props.auth)}
 
                 </Container>
