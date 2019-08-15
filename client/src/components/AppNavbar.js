@@ -67,10 +67,25 @@ render() {
         <div>
             <Navbar color="dark" dark expand="sm" className="mb-5">
                 <Container>
-                    <NavbarBrand href="/">Gril.ly</NavbarBrand>
+                    <NavbarBrand href="/"><b>Gril.ly</b></NavbarBrand>
                     {/* <NavbarToggler onClick={this.toggle} /> */}
                     {/* <Collapse isOpen={this.state.isOpen} navbar></Collapse> */}
+//                           <Collapse isOpen={this.state.isOpen} navbar>
+//                         <Nav className="ml-auto" navbar>
+//                             <NavItem>
+//                                 <NavLink href="/login">
+//                                     Login
+//                                 </NavLink>
+//                             </NavItem>
+//                             <NavItem>
+//                                 <NavLink href="/register">
+//                                     Sign up
+//                                 </NavLink>
+//                             </NavItem>
+//                         </Nav>
+//                     </Collapse>
                     {this.loginOrProfile(this.props.auth)}
+
                 </Container>
                 
                 

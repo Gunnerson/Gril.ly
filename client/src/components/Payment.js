@@ -33,7 +33,7 @@ export default class Payment extends React.Component {
           <Col md={2}>
             <FormGroup>
               <Label for="billingZip">Billing Zip</Label>
-              <Input type="text" name="billingState" id="billingState"/>
+              <Input type="text" name="billingZip" id="billingZip"/>
             </FormGroup>  
           </Col>
         </Row>
@@ -47,18 +47,20 @@ export default class Payment extends React.Component {
           <Col md={4}>
             <FormGroup>
               <Label for="expDate">Exp Date</Label>
-              <Input type="text" name="expDate" id="expDate" placeholder="0819"/>
+              <Input type="number" name="expDate" id="expDate" placeholder="0819"/>
             </FormGroup>
           </Col>
           <Col md={2}>
             <FormGroup>
               <Label for="Csc">CSC CVV2 Number</Label>
-              <Input type="text" name="Csc" id="Csc" placeholder="Num on back of card"/>
+              <Input type="number" name="Csc" id="Csc" placeholder="Num on back of card"/>
             </FormGroup>  
           </Col>
         </Row>
        
-        <Button>Submit Payment</Button>
+        <Button onClick={this.onSubmit} href="./ConfirmationPage">Submit Payment</Button>
+        {/* <Button>Submit Payment</Button> */}
+
       </Form>
     );
   }

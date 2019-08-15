@@ -12,11 +12,20 @@ var Schema = mongoose.Schema;
 // 
 var ReservationSchema = new Schema({
  
+// Values that are passed through from different parts of the application
   date: Date,
   grillRented: String,
-  // datesBooked: [Date] is this necessary or the right place?
-  quantity: Number,
-  userId: String
+  userId: String,
+
+// On the form right now
+  billingAddress: String,
+  billingAddress2: String,
+  billingCity: String,
+  billingState: String,
+  billingZip: String,
+  creditCardNum: String,
+  expDate: Number,
+  Csc: Number
 });
 
 
