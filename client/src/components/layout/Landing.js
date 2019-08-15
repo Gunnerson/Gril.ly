@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 // import Calendar from "../Calendar";
 import AppCarousel from "../AppCarousel";
-import DatePicker from "../DatePicker";
-import Button from "../Button";
+// import DatePicker from "../DatePicker";
+// import Button from "../Button";
 import Search from "../Search";
 
 class Landing extends Component {
@@ -11,23 +11,10 @@ class Landing extends Component {
             <div style={{ height: "75vh" }} className="container valign-wrapper">
                 <div className="row">
                     <div className="col s12 center-align">
-                        <h4>
-                            <b>Gril.ly</b> {" "}
-                            <span style={{ fontFamily: "monospace" }}>TIME</span>
-                        </h4>
-                        <p className="flow-text grey-text text-darken-1">
-                         
-                        </p>
                         <br />
                         <AppCarousel />
                         <br />
-                        {/* <Calendar /> */}
-                        <br />
                         <p><b>Please enter or click on the calendar icon to reserve a BBQ</b></p>
-                        {/* <DatePicker /> */}
-                        <br />
-                        {/* <Button /> */}
-                        <br />
                         <Search />
                         <br />
                     </div>
