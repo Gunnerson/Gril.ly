@@ -27,3 +27,17 @@
 .navbar-fixed {
   color: black;
 }
+
+/* This controls the responsive carousel */
+.carousel-item, .carousel-item.active {
+  align-items:center;
+}
+
+/* Google Fonts */
+
+@import url('https://fonts.googleapis.com/css?family=Oxygen');
+
+body {
+  font-family: 'Oxygen';
+}
+
