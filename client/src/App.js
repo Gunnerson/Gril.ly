@@ -1,12 +1,17 @@
 // import React, { Component } from 'react';
 import React from 'react';
+import { Link, IndexLink } from "react-router";
+import { Container, Row } from "reactstrap";
+import PropTypes from "prop-types";
+
+
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 
-import { Provider } from "react-redux";
+import { connect, Provider } from "react-redux";
 import store from "./store";
 
 // Adding the bootstrap.min.css
@@ -78,7 +83,8 @@ function App() {
           
         {/* Patrick commented out the old Nav, and included the link to AppNavbar.js */}
           {/* <Navbar /> */}
-          <AppNavbar />
+          <AppNavbar/>
+
           <Route exact path="/" component={Landing} />
           <Route exact path="/carousel" component={AppCarousel} />
           {/* <Route exact path="/calendar" component={Calendar} /> */}
@@ -109,4 +115,16 @@ function App() {
   );
 }
 
-export default App;
+App.propTypes = {
+  children: PropTypes.element
+};
+
+function mapStateToProps(state) {
+  return {
+    auth: state.auth
+  }
+}
+
+export default connect(
+  mapStateToProps
+  )(App);

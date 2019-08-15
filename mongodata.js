@@ -26,6 +26,10 @@ grillData = [
         "price": 200},
 ]
 
+// userData = [
+//     {""}
+// ]
+
 const databaseCreation = () => {
     
     db.Grill.findOne({})

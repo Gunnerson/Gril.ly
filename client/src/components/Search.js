@@ -10,10 +10,14 @@ class Search extends Component {
 
     updateDate = (date) => {
         this.setState({ date: date});
+        console.log(date)
+        console.log("this date ^ ")
+
     }
         onSubmit = () => { 
             console.log(this.state.date)
-            Axios.post('/reservation', this.state.date)
+            console.log("this date ^ ")
+            Axios.get('/grill/', this.state.date)
                 .then(response => console.log(response))
         }
   render() {
