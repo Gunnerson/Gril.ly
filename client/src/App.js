@@ -83,7 +83,7 @@ function App() {
           
         {/* Patrick commented out the old Nav, and included the link to AppNavbar.js */}
           {/* <Navbar /> */}
-          <AppNavbar/>
+          <AppNavbar />
 
           <Route exact path="/" component={Landing} />
           <Route exact path="/carousel" component={AppCarousel} />

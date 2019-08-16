@@ -5,7 +5,12 @@ import Axios from "axios";
 
 class Search extends Component {
   state = {
-    date: null
+    date: null,
+    grills: [],
+    grillType: "",
+    description: "",
+    price: ""
+
 
   };
 
@@ -20,12 +25,21 @@ class Search extends Component {
         this.sixDate = month + day + year
     }
     
+//Using week 20, day 2, books sample act 10
+
     onSubmit = () => { 
         // console.log('/grill/' + this.sixDate)
         Axios.get('/grill/' + this.sixDate)
         
-            .then(response => console.log(response))
-    }
+            .then(response => 
+              // console.log(response)
+              this.setState({ grills: response.data, 
+                grillType: "",
+                description: "",
+                price: ""})
+            )
+            .catch(err => console.log(err));
+    };
 
   render() {
     return (
