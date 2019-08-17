@@ -28,7 +28,7 @@ var ReservationSchema = new Schema({
   Csc: Number
 });
 
-
+// no connection to user ID or grill (Brandon)
 
 // This creates our model from the above schema, using mongoose's model method
 var Reservation = mongoose.model("Reservation", ReservationSchema);

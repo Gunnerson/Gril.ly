@@ -5,7 +5,8 @@ const router = express.Router();
 const models = require("../../models")
 
 // Define API routes here
-app.post("/", function(req, res) {
+//brandon changed line 8 from app.post to router.post
+router.post("/", function(req, res) {
     console.log(req.body)
     // Create a new Reservation in the database
 
@@ -29,3 +30,9 @@ app.post("/", function(req, res) {
         res.json(err);
     });
 });
+router.get("/", function (req, res) {
+    res.json({name: "grill"})
+})
+
+//brandon exported router
+module.exports = router
