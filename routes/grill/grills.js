@@ -4,7 +4,7 @@ const grills = (req, res) => {
     if(req.params.date) {
         var array = req.params.date.match(/.{1,2}/g)
         if(array.length !== 3) {
-            return res.send("The query is not in the correct date format. Please use the format MMDDYY.")
+            // return res.send("The query is not in the correct date format. Please use the format MMDDYY.")
         }
         var date = new Date(Number(array[2]), Number(array[0]), Number(array[1]))
         console.log("Date queried", date)

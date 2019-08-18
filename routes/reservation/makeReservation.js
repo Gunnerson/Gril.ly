@@ -1,6 +1,7 @@
 const models = require("../../models")
 
 // Define API routes here
+
 const makeReservation = (req, res) => {
     console.log(req.body)
     // Create a new Reservation in the database
@@ -24,6 +25,7 @@ const makeReservation = (req, res) => {
         // If an error occurs, send it back to the client
         res.json(err);
     });
+
 };
 
 module.exports = makeReservation

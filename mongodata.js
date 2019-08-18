@@ -12,6 +12,7 @@ const importData = () => {
     })
 }
 
+//Brandon wonders if in this area, should we add a reservations array inside grill data
 grillData = [
     {"grillType": "Charcoal Grill (S)",
         "description": "A charcoal grill with a standard 22 inch grate",

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import { Button } from 'reactstrap';
 
 class ConfirmationPage extends Component {
     render() {
@@ -17,6 +17,8 @@ class ConfirmationPage extends Component {
                         <p><b>Please pick up at 1234 Main St. San Francisco CA, 94103</b></p>
                         
                        <br />
+                       {/* Brandon trying to add a button to the payment confirmation page that will bring you to a new page called ReviewResevarvationsPage */}
+                       <Button onClick={this.onSubmit} href="./ReviewReservationsPage">Review Reservations</Button>
 
                     </div>
                 </div>
