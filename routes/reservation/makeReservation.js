@@ -1,12 +1,8 @@
-// To use this, there needs to be userId and grillType;
-
-const express = require("express");
-const router = express.Router();
 const models = require("../../models")
 
 // Define API routes here
-//brandon changed line 8 from app.post to router.post
-router.post("/", function(req, res) {
+
+const makeReservation = (req, res) => {
     console.log(req.body)
     // Create a new Reservation in the database
 
@@ -29,10 +25,7 @@ router.post("/", function(req, res) {
         // If an error occurs, send it back to the client
         res.json(err);
     });
-});
-router.get("/", function (req, res) {
-    res.json({name: "grill"})
-})
 
-//brandon exported router
-module.exports = router
+};
+
+module.exports = makeReservation
