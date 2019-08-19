@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { registerUser } from "../../actions/authActions";
 import classnames from "classnames";
+import { Button, Col, Form, FormGroup } from 'reactstrap';
 
 class Register extends Component {
     constructor() {
@@ -71,8 +72,9 @@ class Register extends Component {
                                 </Link>
                             </p>
                         </div>
-                        <form noValidate onSubmit={this.onSubmit}>
-                            <div className="input-field col s12">
+                        <Form noValidate onSubmit={this.onSubmit}>
+                            <FormGroup>
+                            <Col sm={12}>
                                 <input
                                     onChange={this.onChange}
                                     value={this.state.name}
@@ -83,10 +85,13 @@ class Register extends Component {
                                         invalid: errors.name
                                     })}
                                 />
+                            </Col>
                                 <label htmlFor="name">Name</label>
                                 <span className="red-text">{errors.name}</span>
-                            </div>
-                            <div className="input-field col s12">
+                            
+                        </FormGroup>
+                        <FormGroup>
+                            <Col sm={12}>
                                 <input
                                     onChange={this.onChange}
                                     value={this.state.email}
@@ -97,10 +102,12 @@ class Register extends Component {
                                         invalid: errors.email
                                     })}
                                 />
+                            </Col>
                                 <label htmlFor="email">Email</label>
                                 <span className="red-text">{errors.email}</span>
-                            </div>
-                            <div className="input-field col s12">
+                            </FormGroup>
+                            <FormGroup>
+                                <Col sm={12}>
                                 <input
                                     onChange={this.onChange}
                                     value={this.state.password}
@@ -111,10 +118,12 @@ class Register extends Component {
                                         invalid: errors.password
                                     })}
                                 />
+                                </Col>
                                 <label htmlFor="password">Password</label>
                                 <span className="red-text">{errors.password}</span>
-                            </div>
-                            <div className="input-field col s12">
+                            </FormGroup>
+                            <FormGroup>
+                                <Col sm={12}>
                                 <input
                                     onChange={this.onChange}
                                     value={this.state.password2}
@@ -125,11 +134,13 @@ class Register extends Component {
                                         invalid: errors.password2
                                     })}
                                 />
+                                </Col>
                                 <label htmlFor="password2">Confirm Password</label>
                                 <span className="red-text">{errors.password2}</span>
-                            </div>
-                            <div className="col s12" style={{ paddingLeft: "11.250px" }}>
-                                <button
+                            </FormGroup>
+                            
+                                <Button
+                                    color="info"
                                     style={{
                                         width: "150px",
                                         borderRadius: "3px",
@@ -140,10 +151,10 @@ class Register extends Component {
                                     className="btn btn-large waves-effect waves-light hoverable blue accent-3"
                                     >
                                         Sign up
-                                    </button>
-                            </div>
+                                    </Button>
                             
-                        </form>
+                            
+                        </Form>
                     </div>
                 </div>
             </div>

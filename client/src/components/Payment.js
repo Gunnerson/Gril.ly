@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 import { Col, Row, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
-export default class Payment extends React.Component {
-  render() {
-    return (
-      <Form>
+class Payment extends React.Component {
+
+  loginToCheckout = (auth) => {
+    return auth.isAuthenticated ?
+        <Form>
         <Row form>
           <Col md={12}>
+            
             <FormGroup>
               <Label for="billingAddress">Billing Address 1</Label>
               <Input type="billingaddress" name="billingAddress" id="billingAddress" placeholder="1234 Main St." />
@@ -57,11 +61,39 @@ export default class Payment extends React.Component {
             </FormGroup>  
           </Col>
         </Row>
-       
+      
         <Button onClick={this.onSubmit} href="./ConfirmationPage">Submit Payment</Button>
         {/* <Button>Submit Payment</Button> */}
 
       </Form>
+
+    :
+    <p>
+    <Link to ="/login">Login</Link> or <Link to="/register">Sign Up</Link> to complete your reservation
+    </p>
+  };
+
+  
+
+  render() {
+
+    const { user } = this.props.auth;
+
+    return (
+      <div>
+        {this.loginToCheckout(this.props.auth)}
+      </div>
     );
   }
+
+  
+
 }
+
+const mapStateToProps = state => {
+  return {
+    auth: state.auth
+  }
+}
+
+export default connect(mapStateToProps)(Payment);

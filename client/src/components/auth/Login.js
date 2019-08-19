@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
 import classnames from "classnames";
+import { Button, Col, Form, FormGroup } from 'reactstrap';
 
 class Login extends Component {
     constructor() {
@@ -68,8 +69,10 @@ class Login extends Component {
                                 <Link to="/register"> Register</Link>
                             </p>
                         </div>
-                        <form noValidate onSubmit={this.onSubmit}>
-                            <div className="input-field col s12">
+                        <Form noValidate onSubmit={this.onSubmit}>
+                            <FormGroup>
+                            {/* <div className="input-field col s12"> */}
+                                <Col sm={12}>
                                 <input
                                     onChange={this.onChange}
                                     value={this.state.email}
@@ -80,13 +83,17 @@ class Login extends Component {
                                         invalid: errors.email || errors.emailnotfound
                                     })}
                                 />
-                                    <label htmlFor="email">Email</label>
+                                </Col>
+                                    <label htmlFor="email" sm={3}>Email</label>
                                     <span className="red-text">
                                         {errors.email}
                                         {errors.emailnotfound}
                                     </span>
-                            </div>
-                            <div className="input-field col s12">
+                            </FormGroup>
+                            {/* </div>
+                            <div className="input-field col s12"> */}
+                            <FormGroup>
+                                <Col sm={12}>
                                 <input 
                                     onChange={this.onChange}
                                     value={this.state.password}
@@ -97,14 +104,18 @@ class Login extends Component {
                                         invalid: errors.password || errors.passwordincorrect
                                     })}
                                 />
-                                <label htmlFor="password">Password</label>
+                                </Col>
+                                <label htmlFor="password" sm={2}>Password</label>
                                 <span className="red-text">
                                     {errors.password}
                                     {errors.passwordincorrect}
                                 </span>
-                            </div>
-                            <div className="col s12" style={{ paddingLeft: "11.250px" }}>
-                                <button
+                            </FormGroup>
+                            {/* </div>
+                            <div className="col s12" style={{ paddingLeft: "11.250px" }}> */}
+                            <FormGroup>
+                                <Button
+                                    color="info"
                                     style={{
                                         width: "150px",
                                         borderRadius: "3px",
@@ -112,11 +123,12 @@ class Login extends Component {
                                         marginTop: "1rem"
                                     }}
                                     type="submit"
-                                    className="btn btn-large waves-effect waves-light hoverable blue accent-3">
+                                    >
                                         Login
-                                    </button>
-                            </div>
-                        </form>
+                                    </Button>
+                            {/* </div> */}
+                        </FormGroup>
+                        </Form>
                     </div>
                 </div>
             </div>
