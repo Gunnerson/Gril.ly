@@ -49,6 +49,21 @@ router.post("/register", (req, res) => {
     });
 });
 
+router.post("/registerPayment", (req, res) => {
+    User.findOne({ id: req.body.id }).then(user => {
+        const newPayment = new PaymentAddress({
+            billing: req.body.billing,
+            billing2: req.body.billing2,
+            billingCity: req.body.billingCity,
+            billingState: req.body.billingState,
+            billingZip: req.body.billingZip,
+            creditCardNum: req.body.creditCardNum,
+            expDate: req.body.expDate,
+            csc: req.body.csc
+        })
+    })
+})
+
 // @route POST api/useres/login
 // @desc Login user and return JWT token
 // @access Public

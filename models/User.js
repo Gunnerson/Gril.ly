@@ -19,6 +19,42 @@ const UserSchema = new Schema({
         type: Date, 
         default: Date.now
     },
+    payment: [
+    {
+        billing: {
+            type: String,
+            required: true
+        },
+        billing2: {
+            type: String
+        },
+        billingCity: {
+            type: String,
+            required: true
+        },
+        billingState: {
+            type: String,
+            required: true
+        },
+        billingZip: {
+            type: String,
+            required: true
+        },
+        creditCardNum: {
+            type: Number,
+            required: true
+        },
+        expDate: {
+            type: Date,
+            required: true
+        },
+        csc: {
+            type: Number,
+            required: true
+        }
+
+    }
+    ],
 
     //This needs to be updated from 'note' to maybe Grill
     reservations: [
