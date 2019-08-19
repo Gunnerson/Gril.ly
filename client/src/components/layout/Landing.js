@@ -14,7 +14,7 @@ class Landing extends Component {
                         <br />
                         <AppCarousel />
                         <br />
-                        <p><b>Please enter or click on the calendar icon to reserve a BBQ</b></p>
+                        <p><b>Please enter a date or click on the calendar icon to reserve a BBQ</b></p>
                         <Search />
                         <br />
                     </div>
