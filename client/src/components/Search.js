@@ -52,7 +52,7 @@ class Search extends Component {
            this.updateDate(date)
           }}
         />
-        <Button color="primary" size="lg" style={{marginTop: "50px" }} onClick={this.onSubmit} href="./ItemSelection">submit</Button>
+        <Button color="primary" size="lg" style={{marginTop: "50px" }} onClick={this.onSubmit} >submit</Button>
 
       </div>
       // </div>
