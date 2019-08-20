@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Calendar from "rc-calendar";
 import { Button } from 'reactstrap';
 import Axios from "axios";
+import { Redirect } from "react-router-dom"
+
 
 class Search extends Component {
   state = {
@@ -36,13 +38,19 @@ class Search extends Component {
               this.setState({ grills: response.data, 
                 grillType: "",
                 description: "",
-                price: ""})
+                price: ""}) 
+                this.props.setGrills(response.data)
               }
+
             )
             .catch(err => console.log(err));
     };
 
   render() {
+    console.log('this.props', this.props)
+    if (this.props && this.props.grills.length > 0){
+      return <Redirect to="/ItemSelection" />
+    }
     return (
       // <div style={{ height: "75vh" }} className="container valign-wrapper">
       <div className="row">
@@ -52,7 +60,7 @@ class Search extends Component {
            this.updateDate(date)
           }}
         />
-        <Button color="primary" size="lg" style={{marginTop: "50px" }} onClick={this.onSubmit} href="./ItemSelection">submit</Button>
+        <Button color="primary" size="lg" style={{marginTop: "50px" }} onClick={this.onSubmit} >submit</Button>
 
       </div>
       // </div>
