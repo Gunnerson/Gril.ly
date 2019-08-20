@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Calendar from "rc-calendar";
 import { Button } from 'reactstrap';
 import Axios from "axios";
+// import ReactDOM from 'react-dom';
+// ReactDOM.render(<Calendar />, container);
 
 class Search extends Component {
   state = {
@@ -43,18 +45,21 @@ class Search extends Component {
 
   render() {
     return (
-      // <div style={{ height: "75vh" }} className="container valign-wrapper">
-      <div className="row">
-        Search
+      <div style={{ height: "75vh"}} className="container">
+      <div className="row centered-content">
         <Calendar
           onChange={date => {
            this.updateDate(date)
           }}
         />
-        <Button color="primary" size="lg" style={{marginTop: "50px" }} onClick={this.onSubmit} href="./ItemSelection">submit</Button>
-
-      </div>
-      // </div>
+        </div>
+        <div >  
+          <Button color="primary"  size="sm" onClick={this.onSubmit}  href="./ItemSelection">submit</Button>
+          {/* style={{marginTop: "50px" }} */}
+          {/* style="display:block; margin:0;"  */}
+        </div>
+        </div>
+      //
     );
   }
 }
