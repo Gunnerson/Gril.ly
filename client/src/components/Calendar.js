@@ -1,3 +1,5 @@
+//Is this necessary? The calendar and inline CSS are on Search,js
+
 import React, { Component } from 'react';
 import Calendar from 'react-calendar';
  

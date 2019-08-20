@@ -41,3 +41,9 @@ body {
   font-family: 'Oxygen';
 }
 
+.centered-content {
+  justify-content: center;
+}
+.rc-calendar-table {
+  margin: 0 auto;
+}
