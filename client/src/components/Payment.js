@@ -184,8 +184,8 @@ class Payment extends React.Component {
   render() {
 
     const { user } = this.props.auth;
-    console.log(this.props.auth.user.id)
-    console.log("id^")
+    // console.log(this.props.auth.user.id)
+    // console.log("id^")
 
     return (
       <div>

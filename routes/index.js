@@ -3,7 +3,7 @@ const users = require('./api/users.js');
 const grill = require("./grill")
 const reservation = require("./reservation")
 
-router.use('/api', users);
+router.use('/api/users', users);
 router.use("/grill", grill)
 router.use("/reservation", reservation)
 

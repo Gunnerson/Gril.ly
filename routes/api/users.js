@@ -50,18 +50,34 @@ router.post("/register", (req, res) => {
 });
 
 router.post("/registerPayment", (req, res) => {
-    User.findOne({ id: req.body.id }).then(user => {
-        const newPayment = new PaymentAddress({
-            billing: req.body.billing,
-            billing2: req.body.billing2,
-            billingCity: req.body.billingCity,
-            billingState: req.body.billingState,
-            billingZip: req.body.billingZip,
-            creditCardNum: req.body.creditCardNum,
-            expDate: req.body.expDate,
-            csc: req.body.csc
-        })
-    })
+    const newPayment = {
+        billing: req.body.billing,
+        billing2: req.body.billing2,
+        billingCity: req.body.billingCity,
+        billingState: req.body.billingState,
+        billingZip: req.body.billingZip,
+        creditCardNum: req.body.creditCardNum,
+        expDate: req.body.expDate,
+        csc: req.body.csc
+    };
+
+    User.update({ id: req.body.id }, { $push: { payment: newPayment } })
+    // User.findOne({ id: req.body.id }).then(user => {
+        // creating a new model
+        // const newPayment = new PaymentAddress({
+        //     user: req.body.id,
+        //     billing: req.body.billing,
+        //     billing2: req.body.billing2,
+        //     billingCity: req.body.billingCity,
+        //     billingState: req.body.billingState,
+        //     billingZip: req.body.billingZip,
+        //     creditCardNum: req.body.creditCardNum,
+        //     expDate: req.body.expDate,
+        //     csc: req.body.csc
+        // })
+
+        // newPayment.save();
+    // })
 })
 
 // @route POST api/useres/login
