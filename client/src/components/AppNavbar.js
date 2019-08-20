@@ -36,10 +36,10 @@ class AppNavbar extends Component {
             {/* <Nav className="ml-auto" navbar></Nav> */}
                 <NavItem className="navbar-text">
 
-                    Welcome back {auth.user.name}
+                    Welcome back {auth.user.name}! /
                 </NavItem>
             <NavItem>
-                <NavLink tag= {Link} to ="/logout">Logout</NavLink>
+                <NavLink tag= {Link} to ="/logout"> Logout</NavLink>
             </NavItem>
             </Nav>
         
