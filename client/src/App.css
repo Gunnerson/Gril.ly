@@ -45,4 +45,9 @@ body {
   color: #ff5100;
 }
 
-
+.centered-content {
+  justify-content: center;
+}
+.rc-calendar-table {
+  margin: 0 auto;
+}

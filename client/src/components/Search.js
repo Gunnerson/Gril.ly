@@ -3,7 +3,8 @@ import Calendar from "rc-calendar";
 import { Button } from 'reactstrap';
 import Axios from "axios";
 import { Redirect } from "react-router-dom"
-
+// import ReactDOM from 'react-dom';
+// ReactDOM.render(<Calendar />, container);
 
 class Search extends Component {
   state = {
@@ -52,18 +53,18 @@ class Search extends Component {
       return <Redirect to="/ItemSelection" />
     }
     return (
-      // <div style={{ height: "75vh" }} className="container valign-wrapper">
-      <div className="row">
-        Search
-        <Calendar
-          onChange={date => {
-           this.updateDate(date)
-          }}
-        />
-        <Button color="primary" size="lg" style={{marginTop: "50px" }} onClick={this.onSubmit} >submit</Button>
-
+      <div style={{ height: "75vh"}} className="container">
+        <div className="row centered-content">
+          <Calendar
+            onChange={date => {
+             this.updateDate(date)
+            }}
+          />
+          <Button color="primary" size="lg" style={{marginTop: "50px" }} onClick={this.onSubmit} >submit</Button>
+            {/* style={{marginTop: "50px" }} */}
+            {/* style="display:block; margin:0;"  */}
+        </div>
       </div>
-      // </div>
     );
   }
 }
