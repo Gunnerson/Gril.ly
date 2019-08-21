@@ -73,7 +73,7 @@ class Register extends Component {
                             </p>
                         </div>
                         <Form noValidate onSubmit={this.onSubmit}>
-                            <FormGroup>
+                            {/* <FormGroup> */}
                             <Col sm={12}>
                                 <input
                                     onChange={this.onChange}
@@ -89,8 +89,8 @@ class Register extends Component {
                                 <label htmlFor="name">Name</label>
                                 <span className="red-text">{errors.name}</span>
                             
-                        </FormGroup>
-                        <FormGroup>
+                        {/* </FormGroup>
+                        <FormGroup> */}
                             <Col sm={12}>
                                 <input
                                     onChange={this.onChange}
@@ -105,8 +105,8 @@ class Register extends Component {
                             </Col>
                                 <label htmlFor="email">Email</label>
                                 <span className="red-text">{errors.email}</span>
-                            </FormGroup>
-                            <FormGroup>
+                            {/* </FormGroup>
+                            <FormGroup> */}
                                 <Col sm={12}>
                                 <input
                                     onChange={this.onChange}
@@ -121,8 +121,8 @@ class Register extends Component {
                                 </Col>
                                 <label htmlFor="password">Password</label>
                                 <span className="red-text">{errors.password}</span>
-                            </FormGroup>
-                            <FormGroup>
+                            {/* </FormGroup>
+                            <FormGroup> */}
                                 <Col sm={12}>
                                 <input
                                     onChange={this.onChange}
@@ -137,7 +137,7 @@ class Register extends Component {
                                 </Col>
                                 <label htmlFor="password2">Confirm Password</label>
                                 <span className="red-text">{errors.password2}</span>
-                            </FormGroup>
+                            {/* </FormGroup> */}
                             
                                 <Button
                                     color="info"
