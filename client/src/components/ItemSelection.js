@@ -7,11 +7,14 @@ class ItemSelection extends Component {
         availableGrills: null,
         selectedGrill: null
     }
+
     componentDidMount(){
         axios.get("/grill")
         .then(grills => this.setState({availableGrills: grills.data}))
     }
+
     render() {
+        console.log(this.props.grills)
         return (
             <div style={{ height: "75vh" }} className="container valign-wrapper">
                 <div className="row">
@@ -34,7 +37,12 @@ class ItemSelection extends Component {
                         <p className="flow-text grey-text text-darken-1">
                            Item Selection Page
                         </p>
-                        
+                        {this.grillMap.map(grill => (
+                            <div key={grill.type}>
+                        <img src={grill.image} alt={grill.type} />
+                        {this.props.grills.filter(bbq => bbq.grillType === grill.type ).map((bbq, index) => <p key={index}>bbq.description</p>)}
+                            </div>
+                        ))}
                         <br />
                         <Button />
                        <br />

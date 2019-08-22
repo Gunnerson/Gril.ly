@@ -1,5 +1,5 @@
 // import React, { Component } from 'react';
-import React from 'react';
+import React, {useState} from 'react';
 import { Link, IndexLink } from "react-router";
 import { Container, Row } from "reactstrap";
 import PropTypes from "prop-types";
@@ -75,6 +75,7 @@ if (localStorage.jwtToken) {
 }
 
 function App() {
+  const [grills, setGrills] = useState([]);
   return (
     <Provider store={store}>
       <Router>
@@ -85,7 +86,7 @@ function App() {
           {/* <Navbar /> */}
           <AppNavbar />
 
-          <Route exact path="/" component={Landing} />
+          <Route exact path="/" component={() => <Landing grills={grills} setGrills={setGrills} />} />
           <Route exact path="/carousel" component={AppCarousel} />
           {/* <Route exact path="/calendar" component={Calendar} /> */}
           <Route exact path="/datepicker" compone={DatePicker} />
@@ -99,8 +100,8 @@ function App() {
           <Route exact path="/gasquantitygrill" component={GasGrillQuantity} />
           <Route exact path="/smokerquantity" component={SmokerQuantity} />
           <Route exact path="/confirmationpage" component={ConfirmationPage} />
-          <Route exact path="/search" component={Search} />
-          <Route exact path="/itemselection" component={ItemSelection} />
+          <Route exact path="/search" component={() => <Search grills={grills} setGrills={setGrills} />} />
+          <Route exact path="/itemselection" component={() => <ItemSelection grills={grills} />} />
           <Route exact path="/reviewreservationspage" component={ReviewReservationsPage} />
 
           {/* <Route exact path="/test">
