@@ -53,10 +53,8 @@ class Payment extends React.Component {
     this.props.registerPayment(newPayment, this.props.history);
   };
 
-  
-
   loginToCheckout = (auth) => {
-    return auth.isAuthenticated ?
+    return (
         <Form>
           <Form Group>
             <Label for="id"></Label>
@@ -172,12 +170,131 @@ class Payment extends React.Component {
 
 
       </Form>
+  )};
 
-    :
-    <p>
-    <Link to ="/login">Login</Link> or <Link to="/register">Sign Up</Link> to complete your reservation
-    </p>
-  };
+  // loginToCheckout = (auth) => {
+  //   return auth.isAuthenticated ?
+  //       <Form>
+  //         <Form Group>
+  //           <Label for="id"></Label>
+  //           <Input
+  //           type="hidden"
+  //           value={auth.user.id}
+  //           name="id">
+  //           </Input>
+  //         </Form>
+
+  //       <Row form>
+  //         <Col md={12}>
+  //           <FormGroup>
+  //             <Label for="billingAddress">Billing Address 1</Label>
+  //             <Input 
+  //             onChange={this.onChange}
+  //             value={this.state.billing}
+  //             type="billingaddress" 
+  //             name="billingAddress" 
+  //             id="billingAddress" 
+  //             placeholder="1234 Main St." />
+  //           </FormGroup>
+  //         </Col>
+  //       </Row>
+  //       <FormGroup>
+  //         <Label for="billingAddress2">Billing Address 2</Label>
+  //         <Input 
+  //         onChange={this.onChange}
+  //         value={this.state.billing2}
+  //         type="text" 
+  //         name="billingAddress2" 
+  //         id="billingAddress2" 
+  //         placeholder="Apartment, studio, or floor"/>
+  //       </FormGroup>
+  //       <Row form>
+  //         <Col md={6}>
+  //           <FormGroup>
+  //             <Label for="billingCity">Billing City</Label>
+  //             <Input 
+  //             onChange={this.onChange}
+  //             value={this.state.billingCity}
+  //             type="text" 
+  //             name="billingCity" 
+  //             id="billingCity"/>
+  //           </FormGroup>
+  //         </Col>
+  //         <Col md={4}>
+  //           <FormGroup>
+  //             <Label for="billingState">State</Label>
+  //             <Input 
+  //             onChange={this.onChange}
+  //             value={this.state.billingState}
+  //             type="text" 
+  //             name="billingState" 
+  //             id="billingState"/>
+  //           </FormGroup>
+  //         </Col>
+  //         <Col md={2}>
+  //           <FormGroup>
+  //             <Label for="billingZip">Billing Zip</Label>
+  //             <Input 
+  //             onChange={this.onChange}
+  //             value={this.state.billingZip}
+  //             type="text" 
+  //             name="billingZip" 
+  //             id="billingZip"/>
+  //           </FormGroup>  
+  //         </Col>
+  //       </Row>
+  //       <Row form>
+  //         <Col md={6}>
+  //           <FormGroup>
+  //             <Label for="creditCardNum">Credit Card</Label>
+  //             <Input 
+  //             onChange={this.onChange}
+  //             value={this.state.creditCardNum}
+  //             type="text" 
+  //             name="creditCardNum" 
+  //             id="creditCardNum" 
+  //             placeholder="Visa, MasterCard,  AmEx,  Discover"/>
+  //           </FormGroup>
+  //         </Col>
+  //         <Col md={4}>
+  //           <FormGroup>
+  //             <Label for="expDate">Exp Date</Label>
+  //             <Input 
+  //             onChange={this.onChange}
+  //             value={this.state.expDate}
+  //             type="number" 
+  //             name="expDate" 
+  //             id="expDate" 
+  //             placeholder="0819"/>
+  //           </FormGroup>
+  //         </Col>
+  //         <Col md={2}>
+  //           <FormGroup>
+  //             <Label for="csc">CSC CVV2 Number</Label>
+  //             <Input 
+  //             onChange={this.onChange}
+  //             value={this.state.csc}
+  //             type="number" 
+  //             name="csc" 
+  //             id="csc" 
+  //             placeholder="Num on back of card"/>
+  //           </FormGroup>  
+  //         </Col>
+  //       </Row>
+      
+  //       {/* <Button onClick={this.onSubmit} href="./ConfirmationPage">Submit Payment</Button> */}
+  //       {/* <Button>Submit Payment</Button> */}
+  //       {/* Do we have to add a post action here? */}
+  //       <Button onClick={console.log(this.id, this.billing)}>Submit Payment</Button>
+
+
+  //     </Form>
+
+  //   :
+  //   <p>
+  //   <Link to ="/login">Login</Link> or <Link to="/register">Sign Up</Link> to complete your reservation
+  //   </p>
+  // };
 
   
 
