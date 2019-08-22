@@ -67,7 +67,7 @@ render() {
         <div>
             <Navbar color="dark" dark expand="sm" className="mb-5">
                 <Container>
-                    <NavbarBrand href="/"><i class="fab fa-gripfire"></i><b> Gril.ly</b></NavbarBrand>
+                    <NavbarBrand href="/"><i className="fab fa-gripfire"></i><b> Gril.ly</b></NavbarBrand>
                     {/* <NavbarToggler onClick={this.toggle} /> */}
                     {/* <Collapse isOpen={this.state.isOpen} navbar></Collapse> */}
 {/* //                           <Collapse isOpen={this.state.isOpen} navbar> */}
