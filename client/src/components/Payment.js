@@ -39,7 +39,7 @@ class Payment extends React.Component {
 
 //Payment fields placed into User model
     const newPayment = {
-      id: this.state.id,
+      _id: this.state.userId,
       billing: this.state.billing,
       billing2: this.state.billing2,
       billingCity: this.state.billingCity,
@@ -59,11 +59,11 @@ class Payment extends React.Component {
     return auth.isAuthenticated ?
         <Form>
           <Form Group>
-            <Label for="id"></Label>
+            <Label for="userId"></Label>
             <Input
             type="hidden"
             value={auth.user.id}
-            name="id">
+            name="userId">
             </Input>
           </Form>
 

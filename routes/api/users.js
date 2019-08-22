@@ -61,7 +61,15 @@ router.post("/registerPayment", (req, res) => {
         csc: req.body.csc
     };
 
-    User.update({ id: req.body.id }, { $push: { payment: newPayment } })
+    User.findOneAndUpdate({ _id: req.body.userId }, 
+        { $push: { payment: newPayment } },
+        { new: true })
+        .then(function(payment) {
+            res.json(payment)
+        })
+        .catch(function(err) {
+            res.json(err);
+        });
     // User.findOne({ id: req.body.id }).then(user => {
         // creating a new model
         // const newPayment = new PaymentAddress({
@@ -78,7 +86,7 @@ router.post("/registerPayment", (req, res) => {
 
         // newPayment.save();
     // })
-})
+});
 
 // @route POST api/useres/login
 // @desc Login user and return JWT token
@@ -117,7 +125,7 @@ router.post("/login", (req, res) => {
                     payload,
                     keys.secretOrKey,
                     {
-                        expiresIn: 31556926 //1 year in seconds
+                        expiresIn: 3600 //1 hour in seconds
                     },
                     (err, token) => {
                         res.json({
