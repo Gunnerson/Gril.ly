@@ -1,27 +1,39 @@
 import React, { Component } from "react";
 import Button from "./Button";
+import axios from "axios"
 
 class ItemSelection extends Component {
-    grillMap = [{
-        type: "Charcoal Grill (S)",
-        image: "http://pkelliher.imgix.net/BBQReg.jpg?w=200&h=200"
-    },{
-        type: "Propane Grill (M)",
-        image:  "http://pkelliher.imgix.net/GasGrillSm.jpg?w=200&h=200"
-},{
-        type: "Propane Grillmeister (XL)",
-        image: "http://pkelliher.imgix.net/GasGrillLG.jpg?w=200&h=200"
-}, {
-        type: "Smokeysmoketastic (M)",
-        image: "http://pkelliher.imgix.net/SmokerNew.jpg?w=200&h=200"   
+    state={
+        availableGrills: null,
+        selectedGrill: null
     }
-    ]    
+
+    componentDidMount(){
+        axios.get("/grill")
+        .then(grills => this.setState({availableGrills: grills.data}))
+    }
+
     render() {
         console.log(this.props.grills)
         return (
             <div style={{ height: "75vh" }} className="container valign-wrapper">
                 <div className="row">
                     <div className="col s12 center-align">
+                        {this.state.availableGrills ?
+                        this.state.availableGrills.map(grill => { 
+                            
+                            return <div>
+                                <h1>
+                                    {grill.grillType}
+                                </h1>
+                                <h2>
+                                    {grill.grilldescription}
+                                </h2>
+                            </div>
+
+                        }): 
+                        <div></div>
+                    }
                         <p className="flow-text grey-text text-darken-1">
                            Item Selection Page
                         </p>
