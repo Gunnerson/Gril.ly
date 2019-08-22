@@ -15,7 +15,7 @@ class Landing extends Component {
                         <AppCarousel />
                         <br />
                         <p><b>Please enter a date or click on the calendar icon to reserve a BBQ</b></p>
-                        <Search />
+                        <Search grills={this.props.grills} setGrills={this.props.setGrills} />
                         <br />
                     </div>
                 </div>
