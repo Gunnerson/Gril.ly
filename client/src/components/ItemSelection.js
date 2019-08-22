@@ -16,6 +16,7 @@ class ItemSelection extends Component {
         image: "http://pkelliher.imgix.net/SmokerNew.jpg?w=200&h=200"   
     }
     ]    
+    
     render() {
         console.log(this.props.grills)
         return (
