@@ -16,7 +16,7 @@ class PaymentPage extends Component {
                             <span style={{ fontFamily: "monospace" }}>TIME</span>
                         </h4> */}
                         <p className="flow-text grey-text text-darken-1">
-                           Payment Page
+                           Payment Page: price is {this.props.grill.price}
                         </p>
                         {/* <QuantityGrill />
                         <GasGrillQuantity />

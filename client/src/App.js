@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 
 
 
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
@@ -45,6 +45,7 @@ import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
+import Axios from 'axios';
 // import PaymentSubmitButton from './components/PaymentSubmitButton';
 
 
@@ -76,6 +77,12 @@ if (localStorage.jwtToken) {
 
 function App() {
   const [grills, setGrills] = useState([]);
+  const [selectedGrill, setSelectedGrill] = useState(null);
+  if (selectedGrill) {
+    //Axios.post('/api/buygrill', selectedGrill)
+    console.log('posting Grill Data', selectedGrill);
+    
+  }
   return (
     <Provider store={store}>
       <Router>
@@ -94,14 +101,14 @@ function App() {
           <Route exact path="/login" component={Login} />
           <Route exact path="/button" component={Button} />
           {/* <Route exact path="/paymentsubmitbutton" component={PaymentSubmitButton} /> */}
-          <Route exact path="/paymentpage" component={PaymentPage} /> 
+          <Route exact path="/paymentpage" component={() => <PaymentPage grill={selectedGrill} />} /> 
           <Route exact path="/payment" component={Payment} />
           <Route exact path="/quantitygrill" component={QuantityGrill} />
           <Route exact path="/gasquantitygrill" component={GasGrillQuantity} />
           <Route exact path="/smokerquantity" component={SmokerQuantity} />
           <Route exact path="/confirmationpage" component={ConfirmationPage} />
           <Route exact path="/search" component={() => <Search grills={grills} setGrills={setGrills} />} />
-          <Route exact path="/itemselection" component={() => <ItemSelection grills={grills} />} />
+          <Route exact path="/itemselection" component={() => <ItemSelection grills={grills} submitForm={setSelectedGrill} selectedGrill={selectedGrill} />} />
           <Route exact path="/reviewreservationspage" component={ReviewReservationsPage} />
 
           {/* <Route exact path="/test">
