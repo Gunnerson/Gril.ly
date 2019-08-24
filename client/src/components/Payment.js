@@ -63,7 +63,8 @@ class Payment extends React.Component {
             <Input
             type="hidden"
             value={auth.user.id}
-            name="userId">
+            name="userId"
+            >
             </Input>
           </Form>
 
@@ -77,7 +78,8 @@ class Payment extends React.Component {
               type="billingaddress" 
               name="billingAddress" 
               id="billingAddress" 
-              placeholder="1234 Main St." />
+              // placeholder="1234 Main St."
+              />
             </FormGroup>
           </Col>
         </Row>
@@ -89,7 +91,8 @@ class Payment extends React.Component {
           type="text" 
           name="billingAddress2" 
           id="billingAddress2" 
-          placeholder="Apartment, studio, or floor"/>
+          // placeholder="Apartment, studio, or floor"
+          />
         </FormGroup>
         <Row form>
           <Col md={6}>
