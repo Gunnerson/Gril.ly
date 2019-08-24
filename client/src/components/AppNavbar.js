@@ -22,11 +22,6 @@ import {
 
 class AppNavbar extends Component {
 
-    onLogoutClick = e => {
-        e.preventDefault();
-        this.props.logoutUser();
-    };
-
     // state = {
     //     isOpen: false
     // }
@@ -46,7 +41,7 @@ class AppNavbar extends Component {
                     Welcome back {auth.user.name}! /
                 </NavItem>
             <NavItem>
-                <NavLink onClick={this.onLogoutClick} tag= {Link} to ="/logout"> Logout</NavLink>
+                <NavLink tag= {Link} to ="/logout"> Logout</NavLink>
             </NavItem>
             </Nav>
         
@@ -102,21 +97,13 @@ render() {
 
 }
 }
-
-AppNavbar.propTypes = {
-    logoutUser: PropTypes.func.isRequired,
-    auth: PropTypes.object.isRequired
-}
 const mapStateToProps = state => {
     return {
         auth: state.auth
     }
 }
 
-export default connect(
-    mapStateToProps,
-    { logoutUser }
-    )(AppNavbar);
+export default connect(mapStateToProps)(AppNavbar);
 
 
 
